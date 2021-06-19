@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- important meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- title and favicon -->
+    <title>My Notes</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <!-- custom styling -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./">My Notes</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./">Home</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" id="searchInput" placeholder="Search"
+                        aria-label="Search">
+                    <button class="btn btn-outline-success" id="searchBtn" type="submit">Search</button>
+                </form>
+            </div> -->
+        </div>
+    </nav>
+
+    <!-- input section -->
+    <div class="container my-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Add Note</h5>
+                <!-- <div class="mb-3">
+                    <label for="noteTitleInput" class="form-label">Title</label>
+                    <input type="text" class="form-control" id="noteTitleInput">
+                </div> -->
+                <div class="mb-3">
+                    <label for="noteTextInput" class="form-label">Note</label>
+                    <textarea class="form-control" id="noteTextInput" rows="3" style="resize: none;"></textarea>
+                </div>
+                <button id="addNoteBtn" class="btn btn-primary">Add Note</button>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2 class="mt-5">Your Notes</h2>
+            <hr>
+            <div id="notes" class="row justify-content-center"></div>
+        </div>
+    </div>
+
+</body>
+
+<!-- bootstrap js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+
+<!-- custom js -->
+<script src="./assets/js/app.js"></script>
+
+</html>
