@@ -1,0 +1,24 @@
+.darkContainer {
+  background-color: #212529 !important;
+  color: #efefef;
+  box-shadow: #000 1px 3px 20px;
+}
+
+.darkNav {
+  background-color: #111 !important;
+  color: #efefef !important;
+  box-shadow: #000 1px 5px 20px;
+}
+
+.darkCard {
+  opacity: 0.8;
+  box-shadow: #000 1px 7px 30px -13px;
+}
+
+.lowOpacity {
+  opacity: 0.8;
+}
+
+.navbar-collapse {
+  flex-grow: unset !important;
+}

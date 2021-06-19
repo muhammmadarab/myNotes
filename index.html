@@ -9,7 +9,7 @@
 
     <!-- title and favicon -->
     <title>My Notes</title>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./assets/img/favicon.png" type="image/x-icon">
 
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -21,7 +21,7 @@
 
 <body>
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fw-bold">
         <div class="container-fluid">
             <a class="navbar-brand" href="./">My Notes</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -29,24 +29,24 @@
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./">Home</a>
-                    </li>
-                </ul>
-                <form class="d-flex">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <hr class="d-lg-none text-light">
+                <div class="form-check form-switch text-light cursor-po">
+                    <input class="form-check-input" type="checkbox" id="darkModeSwitch" onclick="switchVal()">
+                    <label class="form-check-label" for="darkModeSwitch">Dark Mode</label>
+                </div>
+                <!-- <form class="d-flex">
                     <input class="form-control me-2" type="search" id="searchInput" placeholder="Search"
                         aria-label="Search">
                     <button class="btn btn-outline-success" id="searchBtn" type="submit">Search</button>
-                </form>
-            </div> -->
+                </form> -->
+            </div>
         </div>
     </nav>
 
     <!-- input section -->
-    <div class="container my-3">
-        <div class="card">
+    <div class="container my-5">
+        <div class="card" id="inputSection">
             <div class="card-body">
                 <h5 class="card-title">Add Note</h5>
                 <!-- <div class="mb-3">
@@ -57,14 +57,19 @@
                     <label for="noteTextInput" class="form-label">Note</label>
                     <textarea class="form-control" id="noteTextInput" rows="3" style="resize: none;"></textarea>
                 </div>
-                <button id="addNoteBtn" class="btn btn-primary">Add Note</button>
+                <div class="d-grid gap-2">
+                    <button id="addNoteBtn" class="btn btn-primary ">Add Note</button>
+                    <button class="btn btn-primary" onclick="delAllNotes()">Delete All Notes</button>
+                </div>
             </div>
         </div>
 
-        <div class="container">
+        <div class="container" id="noteContainer">
             <h2 class="mt-5">Your Notes</h2>
             <hr>
-            <div id="notes" class="row justify-content-center"></div>
+            <div id="notes" class="row justify-content-center">
+                <p class="text-center my-5">Nothing to show! Use "Add Note" section above to add notes.</p>
+            </div>
         </div>
     </div>
 
