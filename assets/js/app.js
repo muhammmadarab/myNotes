@@ -5,16 +5,20 @@ darkMode();
 let addNoteBtn = document.getElementById("addNoteBtn");
 addNoteBtn.addEventListener("click", function (e) {
   let noteInput = document.getElementById("noteTextInput");
+  let noteTitle = document.getElementById("noteTitleInput");
   let note = localStorage.getItem("note");
 
   if (note == null) {
     notesObj = [];
   } else {
+    // notesObj = '{ "title": "noteTitle.value", "noteV": "noteInput.value" };';
     notesObj = JSON.parse(note);
   }
-  notesObj.push(noteInput.value);
+
+  notesObj.push(noteTitle.value, noteInput.value);
   localStorage.setItem("note", JSON.stringify(notesObj));
   noteInput.value = "";
+  noteTitle.value = "";
 
   showNotes();
   darkMode();
@@ -30,19 +34,32 @@ function showNotes() {
   }
 
   let noteHTML = "";
-  notesObj.forEach(function (element, index) {
-    noteHTML += `
-      <div class="card m-3" style="width: 18rem;">
-        <div class="card-body">
-            <h5 class="card-title">Note ${index + 1}</h5>
-            <p class="card-text">${element}</p>
-            <button onclick="deleteNote(this.id)" id="${index}" class="btn btn-primary">Delete Note</button>
-        </div>
-      </div>
-    `;
+  // notesObj.forEach(function (element, index) {
+  //   noteHTML += `
+  //     <div class="card m-3" style="width: 18rem;">
+  //       <div class="card-body">
+  //           <h5 class="card-title">Note ${note.title}</h5>
+  //           <p class="card-text">${element}</p>
+  //           <button onclick="deleteNote(this.id)" id="${index}" class="btn btn-primary">Delete Note</button>
+  //       </div>
+  //     </div>
+  //   `;
 
+  for (let i = 0; i < notesObj.length / 2; i++) {
+    // notesObj.forEach(function (element, index) {
+    noteHTML += `
+          <div class="card m-3" style="width: 18rem;">
+            <div class="card-body">
+                <h3 class="card-title text-uppercase">${notesObj[i * 2]}</h3>
+                <p class="card-text">${notesObj[i * 2 + 1]}</p>
+                <button onclick="deleteNote(this.id)" id="${i}" class="btn btn-primary">Delete Note</button>
+            </div>
+          </div>
+        `;
     document.getElementById("notes").innerHTML = noteHTML;
-  });
+  }
+
+  // });
 }
 
 // function to delete notes
@@ -54,7 +71,7 @@ function deleteNote(index) {
     notesObj = JSON.parse(note);
   }
 
-  notesObj.splice(index, 1);
+  notesObj.splice(index, 2);
   localStorage.setItem("note", JSON.stringify(notesObj));
   showNotes();
   darkMode();
@@ -120,9 +137,15 @@ function darkTheme() {
     .querySelector("#noteTextInput")
     .classList.add("bg-dark", "text-light");
 
+  document
+    .querySelector("#noteTitleInput")
+    .classList.add("bg-dark", "text-light");
+
   // card container
   document.querySelector("#noteContainer").classList.add("darkContainer");
-  document.querySelector("#noteContainer h2").classList.add("pt-3", "lowOpacity");
+  document
+    .querySelector("#noteContainer h2")
+    .classList.add("pt-3", "lowOpacity");
   let x = document.querySelectorAll("#notes .card");
   for (let i = 0; i < x.length; i++) {
     x[i].classList.add("bg-dark", "text-light", "darkCard");
@@ -142,6 +165,10 @@ function lightTheme() {
     .classList.remove("darkContainer", "lowOpacity");
   document
     .querySelector("#noteTextInput")
+    .classList.remove("bg-dark", "text-light");
+
+  document
+    .querySelector("#noteTitleInput")
     .classList.remove("bg-dark", "text-light");
 
   // card container
