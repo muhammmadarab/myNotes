@@ -13,7 +13,8 @@ addNoteBtn.addEventListener("click", function (e) {
   let notes = localStorage.getItem("notes");
 
   if (noteInput.value.length == 0) {
-    alert("Note cannot be empty");
+    let btn = document.getElementById("emptyNoteModalBtn");
+    btn.click() = true;
   } else {
     if (notes == null) {
       notesObj = [];

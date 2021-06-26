@@ -52,6 +52,10 @@ function darkTheme() {
   for (let i = 0; i < y.length; i++) {
     y[i].classList.add("bg-dark");
   }
+
+  // modal
+  let modal = document.querySelector(".modal-content");
+  modal.classList.add("bg-dark", "text-light");
 }
 
 function lightTheme() {
@@ -88,4 +92,8 @@ function lightTheme() {
   for (let i = 0; i < y.length; i++) {
     y[i].classList.remove("bg-dark");
   }
+
+  // modal
+  let modal = document.querySelector(".modal-content");
+  modal.classList.remove("bg-dark", "text-light");
 }

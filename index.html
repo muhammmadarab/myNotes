@@ -73,12 +73,32 @@
             </div>
         </div>
 
+        <!-- custom alert -->
+        <button type="button" class="d-none" data-bs-toggle="modal" data-bs-target="#emptyNoteModal" id="emptyNoteModalBtn"></button>
+        <div class="modal fade" id="emptyNoteModal" tabindex="-1" aria-labelledby="emptyNoteModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header border-0">
+                        <h5 class="modal-title text-danger" id="emptyNoteModalLabel">Note Empty</h5>
+                    </div>
+                    <div class="modal-body">
+                        Note cannot be empty.
+                    </div>
+                    <div class="modal-footer border-0">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="container" id="noteContainer">
             <h2 class="mt-5">Your Notes</h2>
             <hr>
             <div id="notes" class="row justify-content-center"></div>
         </div>
     </div>
+
 
 </body>
 
