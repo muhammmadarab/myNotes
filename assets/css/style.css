@@ -19,6 +19,23 @@
   opacity: 0.8;
 }
 
+/* float right */
 .navbar-collapse {
   flex-grow: unset !important;
+}
+
+/* important makeout */
+.impNote {
+  border: 1px solid red !important;
+}
+
+.impNote h3 {
+  color: red !important;
+}
+
+.impNote sup {
+  top: -1.3em;
+  color: red !important;
+  background-color: #ffffff;
+  display: unset !important;
 }

@@ -17,6 +17,7 @@
 
     <!-- custom styling -->
     <link rel="stylesheet" href="./assets/css/style.css">
+
 </head>
 
 <body>
@@ -49,6 +50,10 @@
         <div class="card" id="inputSection">
             <div class="card-body">
                 <h5 class="card-title">Add Note</h5>
+                <!-- <div class="form-check form-switch text-light cursor-po">
+                    <input class="form-check-input" type="checkbox" id="impSwitch">
+                    <label class="form-check-label" for="impSwitch"></label>
+                </div> -->
                 <div class="mb-3">
                     <label for="noteTitleInput" class="form-label">Title</label>
                     <input type="text" class="form-control" id="noteTitleInput">
@@ -56,6 +61,10 @@
                 <div class="mb-3">
                     <label for="noteTextInput" class="form-label">Note</label>
                     <textarea class="form-control" id="noteTextInput" rows="3" style="resize: none;"></textarea>
+                </div>
+                <div class="form-check my-3">
+                    <input class="form-check-input" type="checkbox" value="" id="impSwitch">
+                    <label class="form-check-label" for="impSwitch">Mark as important</label>
                 </div>
                 <div class="d-grid gap-2">
                     <button id="addNoteBtn" class="btn btn-primary ">Add Note</button>
@@ -67,9 +76,7 @@
         <div class="container" id="noteContainer">
             <h2 class="mt-5">Your Notes</h2>
             <hr>
-            <div id="notes" class="row justify-content-center">
-                <p class="text-center my-5">Nothing to show! Use "Add Note" section above to add notes.</p>
-            </div>
+            <div id="notes" class="row justify-content-center"></div>
         </div>
     </div>
 
@@ -82,5 +89,6 @@
 
 <!-- custom js -->
 <script src="./assets/js/app.js"></script>
+<script src="./assets/js/dark.js"></script>
 
 </html>
